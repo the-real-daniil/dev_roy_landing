@@ -1,5 +1,6 @@
 import { CheckCircle2, Info } from 'lucide-react';
 import { tariffs } from '@/shared/config/landing';
+import { siteConfig } from '@/shared/config/site';
 import { anchors } from '@/shared/lib/anchor';
 import { Button } from '@/shared/button';
 import styles from './pricing.module.css';
@@ -43,7 +44,7 @@ export function Pricing() {
                 <Button
                   endAdornment={null}
                   className={styles.tariffButton}
-                  href="#contact"
+                  href={siteConfig.links.contact}
                   variant={tariff.buttonVariant}
                 >
                   Начать

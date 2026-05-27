@@ -77,11 +77,6 @@
     color var(--motion-medium) var(--motion-ease-out);
 }
 
-.step:hover {
-  border-color: var(--c-white);
-  background: var(--c-white);
-}
-
 .step[data-side='right'] {
   justify-self: stretch;
 }
@@ -121,6 +116,13 @@
     font-size: 22px;
     line-height: 26px;
     font-weight: 400;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .step:hover {
+    border-color: var(--c-white);
+    background: var(--c-white);
   }
 }
 

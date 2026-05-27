@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ArrowRight, Dot } from 'lucide-react';
+import { siteConfig } from '@/shared/config/site';
 import { anchors } from '@/shared/lib/anchor';
 import { Button } from '@/shared/button';
 import { SectionLabel } from '@/shared/section-label';
@@ -83,12 +84,16 @@ export function Trust() {
               </a>
               <Button
                 className={styles.contactButton}
-                href="https://t.me/the_real_daniil"
+                href={siteConfig.links.telegram}
                 variant="solid"
               >
                 Телеграм-канал
               </Button>
-              <Button className={styles.contactButton} href="https://youtube.com" variant="solid">
+              <Button
+                className={styles.contactButton}
+                href={siteConfig.links.youtube}
+                variant="solid"
+              >
                 YouTube-канал
               </Button>
             </div>

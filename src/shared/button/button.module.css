@@ -51,20 +51,6 @@
   transition: transform var(--motion-medium) var(--motion-spring-ease);
 }
 
-.button:hover {
-  box-shadow: 0 14px 32px rgba(232, 80, 2, 0.22);
-  transform: translateY(-1px);
-}
-
-.button:hover::before {
-  opacity: 1;
-  transform: translateX(70%) skewX(-18deg);
-}
-
-.button:hover svg {
-  transform: translate3d(3px, -3px, 0);
-}
-
 .solid {
   background: var(--c-orange);
   color: var(--c-white);
@@ -78,6 +64,22 @@
 
 .ghost {
   border-color: rgba(239, 75, 0, 0.55);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    box-shadow: 0 14px 32px rgba(232, 80, 2, 0.22);
+    transform: translateY(-1px);
+  }
+
+  .button:hover::before {
+    opacity: 1;
+    transform: translateX(70%) skewX(-18deg);
+  }
+
+  .button:hover svg {
+    transform: translate3d(3px, -3px, 0);
+  }
 }
 
 @media (min-width: 768px) {

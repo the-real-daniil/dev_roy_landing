@@ -29,7 +29,6 @@ export function Button({
     <motion.a
       className={clsx(styles.button, styles[variant], className)}
       href={href}
-      whileHover={{ scale: 1.025, y: -3 }}
       whileTap={{ scale: 0.97 }}
       transition={{ damping: 26, stiffness: 460, type: 'spring' }}
       {...rest}

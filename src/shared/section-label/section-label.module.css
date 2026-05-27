@@ -16,8 +16,10 @@
     transform var(--motion-medium) var(--motion-spring-ease);
 }
 
-.label:hover {
-  background: var(--c-orange);
-  color: var(--c-white);
-  transform: rotate(-1deg) translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .label:hover {
+    background: var(--c-orange);
+    color: var(--c-white);
+    transform: rotate(-1deg) translateY(-2px);
+  }
 }

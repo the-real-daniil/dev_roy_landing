@@ -42,11 +42,6 @@
   border-top-color: var(--c-orange);
 }
 
-.item:hover {
-  border-top-color: var(--c-orange);
-  padding-inline: 18px;
-}
-
 .question {
   display: grid;
   grid-template-columns: 36px 1fr 46px;
@@ -87,11 +82,6 @@
     transform 180ms ease;
 }
 
-.question .answerButton:hover {
-  background: var(--c-black);
-  transform: translateY(-1px);
-}
-
 .item p {
   max-width: 720px;
   margin: 20px 0 0;
@@ -99,6 +89,18 @@
   font-size: 18px;
   line-height: 1.22;
   overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .item:hover {
+    border-top-color: var(--c-orange);
+    padding-inline: 18px;
+  }
+
+  .question .answerButton:hover {
+    background: var(--c-black);
+    transform: translateY(-1px);
+  }
 }
 
 @media (min-width: 1024px) {

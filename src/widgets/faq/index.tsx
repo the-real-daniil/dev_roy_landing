@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Minus, Plus } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { faqItems } from '@/shared/config/landing';
+import { siteConfig } from '@/shared/config/site';
 import { anchors } from '@/shared/lib/anchor';
 import { Button } from '@/shared/button';
 import styles from './faq.module.css';
@@ -18,7 +19,7 @@ export function Faq() {
         <Button
           className={styles.sideButton}
           data-motion-reveal="up"
-          href="#contact"
+          href={siteConfig.links.contact}
           variant="ghost"
         >
           Обсудить обучение

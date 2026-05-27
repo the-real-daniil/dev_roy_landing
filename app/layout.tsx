@@ -1,16 +1,86 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+import { siteConfig } from '@/shared/config/site';
 import '@/app/globals.css';
 
-export const metadata: Metadata = {
-  title: 'ДЕВ РОЙ - школа карьерного роста',
-  description:
-    'Обучение с сеньор-разработчиком для роста фронтенд-разработчиков и выхода на новую зарплату.',
+const openGraphImage = {
+  url: siteConfig.assets.openGraphImage,
+  width: 591,
+  height: 716,
+  alt: 'Даниил Лаптев выступает на мероприятии',
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  alternates: {
+    canonical: siteConfig.links.home,
+  },
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.links.home,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: 'website',
+    images: [openGraphImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.assets.openGraphImage],
+  },
+  icons: {
+    icon: siteConfig.assets.icon,
+    shortcut: siteConfig.assets.icon,
+    apple: siteConfig.assets.appleIcon,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}${siteConfig.assets.logo}`,
+  description: siteConfig.description,
+  email: siteConfig.contacts.email,
+  sameAs: [siteConfig.links.telegram, siteConfig.links.youtube],
+  founder: {
+    '@type': 'Person',
+    name: 'Даниил Лаптев',
+    jobTitle: 'Сеньор фронтенд разработчик',
+    sameAs: siteConfig.links.telegram,
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: siteConfig.contacts.email,
+    contactType: 'customer support',
+    availableLanguage: ['ru'],
+  },
+};
+
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

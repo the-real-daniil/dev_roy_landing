@@ -63,18 +63,6 @@
   color: var(--c-white);
 }
 
-.card:hover {
-  border-color: var(--c-black);
-}
-
-.card:hover h3 {
-  color: var(--c-orange);
-}
-
-.card[data-featured='true']:hover h3 {
-  color: var(--c-white);
-}
-
 .footBox {
   display: flex;
   flex-direction: column;
@@ -111,10 +99,6 @@
   transition:
     color var(--motion-medium) var(--motion-ease-out),
     filter var(--motion-medium) var(--motion-ease-out);
-}
-
-.card:hover h3 {
-  filter: saturate(1.18);
 }
 
 .body {
@@ -158,11 +142,6 @@
   transition:
     color var(--motion-medium) var(--motion-ease-out),
     transform var(--motion-medium) var(--motion-spring-ease);
-}
-
-.listItem:hover svg {
-  color: var(--c-orange);
-  transform: rotate(8deg) scale(1.08);
 }
 
 .price {
@@ -216,6 +195,26 @@
   background: var(--c-orange);
   color: var(--c-white);
   padding: 7px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: var(--c-black);
+  }
+
+  .card:hover h3 {
+    color: var(--c-orange);
+    filter: saturate(1.18);
+  }
+
+  .card[data-featured='true']:hover h3 {
+    color: var(--c-white);
+  }
+
+  .listItem:hover svg {
+    color: var(--c-orange);
+    transform: rotate(8deg) scale(1.08);
+  }
 }
 
 @media (min-width: 1024px) {

@@ -55,14 +55,6 @@
   transition: transform var(--motion-medium) var(--motion-ease-out);
 }
 
-.nav a:hover {
-  color: var(--c-orange);
-}
-
-.nav a:hover::after {
-  transform: scaleX(1);
-}
-
 .cta {
   width: auto;
   min-height: 38px;
@@ -78,6 +70,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav a:hover {
+    color: var(--c-orange);
+  }
+
+  .nav a:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 @media (min-width: 768px) {

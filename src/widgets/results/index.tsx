@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { results } from '@/shared/config/landing';
+import { siteConfig } from '@/shared/config/site';
 import { anchors } from '@/shared/lib/anchor';
 import { Button } from '@/shared/button';
 import { SectionLabel } from '@/shared/section-label';
@@ -44,13 +45,13 @@ export function Results() {
                 Зарплата: <span>{result.salary}</span>
               </div>
             </div>
-            <a className={styles.link} href="#contact">
+            <a className={styles.link} href={siteConfig.links.contact}>
               смотреть весь отзыв
             </a>
           </article>
         ))}
       </div>
-      <Button className={styles.all} data-motion-reveal="up" href="#contact">
+      <Button className={styles.all} data-motion-reveal="up" href={siteConfig.links.contact}>
         Все отзывы
       </Button>
     </section>

@@ -92,15 +92,6 @@
     transform var(--motion-medium) var(--motion-spring-ease);
 }
 
-.card:hover {
-  background: var(--c-white);
-}
-
-.card:hover .icon {
-  color: var(--c-orange);
-  transform: rotate(8deg) scale(1.06);
-}
-
 .bigButton {
   align-items: end;
   justify-content: space-between;
@@ -116,6 +107,17 @@
 
   & svg {
     align-self: baseline;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    background: var(--c-white);
+  }
+
+  .card:hover .icon {
+    color: var(--c-orange);
+    transform: rotate(8deg) scale(1.06);
   }
 }
 

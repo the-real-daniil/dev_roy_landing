@@ -51,11 +51,6 @@
     background var(--motion-medium) var(--motion-ease-out);
 }
 
-.card:hover {
-  border-color: var(--c-black);
-  background: var(--c-orange);
-}
-
 .cardContent {
   display: flex;
   flex-direction: column;
@@ -106,10 +101,6 @@
   transition: transform var(--motion-medium) var(--motion-spring-ease);
 }
 
-.card:hover .avatar {
-  transform: rotate(4deg) scale(1.08);
-}
-
 .salary {
   border-top: 1px solid var(--c-line);
   padding-top: 32px;
@@ -134,15 +125,26 @@
     color var(--motion-medium) var(--motion-ease-out);
 }
 
-.link:hover {
-  background: var(--c-orange);
-  color: var(--c-white);
-}
-
 .all {
   display: flex;
   width: 100%;
   margin: 0 auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: var(--c-black);
+    background: var(--c-orange);
+  }
+
+  .card:hover .avatar {
+    transform: rotate(4deg) scale(1.08);
+  }
+
+  .link:hover {
+    background: var(--c-orange);
+    color: var(--c-white);
+  }
 }
 
 @media (min-width: 768px) {

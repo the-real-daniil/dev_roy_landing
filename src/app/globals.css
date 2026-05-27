@@ -32,6 +32,7 @@
   --motion-slow: 780ms;
   --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-spring-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --focus-ring: 0 0 0 3px rgba(249, 249, 249, 0.96), 0 0 0 6px rgba(232, 80, 2, 0.88);
 }
 
 @media (min-width: 480px) {
@@ -107,6 +108,18 @@ a {
 a,
 button {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+a:focus,
+button:focus {
+  outline: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: 0;
 }
 
 img {
