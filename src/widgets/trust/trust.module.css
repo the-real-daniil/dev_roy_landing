@@ -154,18 +154,38 @@
   list-style: none;
 
   & li {
+    position: relative;
     display: grid;
     grid-template-columns: 18px 1fr;
     gap: 16px;
-    border-top: 1px solid var(--c-line);
     padding: 18px 0 22px 0;
     font-size: 22px;
     line-height: 26px;
     font-weight: 400;
     transition:
-      border-color var(--motion-medium) var(--motion-ease-out),
       color var(--motion-medium) var(--motion-ease-out),
       transform var(--motion-medium) var(--motion-ease-out);
+  }
+
+  & li::before,
+  & li::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+  }
+
+  & li::before {
+    background-color: var(--c-line);
+  }
+
+  & li::after {
+    background-color: var(--c-orange);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--motion-medium) var(--motion-ease-out);
   }
 
   & span {
@@ -237,10 +257,18 @@
     transform: rotate(3deg) scale(1.03);
   }
 
+  .metric[data-pointer-card]:hover {
+    box-shadow: none;
+    transform: none;
+  }
+
   .facts li:hover {
-    border-top-color: var(--c-orange);
     color: var(--c-black);
     transform: translateX(10px);
+  }
+
+  .facts li:hover::after {
+    transform: scaleX(1);
   }
 
   .links > a:first-child:hover svg {

@@ -31,15 +31,34 @@
 }
 
 .item {
-  border-top: 1px solid var(--c-line);
+  position: relative;
   padding: var(--list-row-padding);
-  transition:
-    border-color var(--motion-medium) var(--motion-ease-out),
-    padding-inline var(--motion-medium) var(--motion-ease-out);
+  transition: padding-inline var(--motion-medium) var(--motion-ease-out);
 }
 
-.item[data-open='true'] {
-  border-top-color: var(--c-orange);
+.item::before,
+.item::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+}
+
+.item::before {
+  background-color: var(--c-line);
+}
+
+.item::after {
+  background-color: var(--c-orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--motion-medium) var(--motion-ease-out);
+}
+
+.item[data-open='true']::after {
+  transform: scaleX(1);
 }
 
 .question {
@@ -93,8 +112,16 @@
 
 @media (hover: hover) and (pointer: fine) {
   .item:hover {
-    border-top-color: var(--c-orange);
     padding-inline: 18px;
+  }
+
+  .item:hover::after {
+    transform: scaleX(1);
+  }
+
+  .item[data-pointer-card]:hover {
+    box-shadow: none;
+    transform: none;
   }
 
   .question .answerButton:hover {

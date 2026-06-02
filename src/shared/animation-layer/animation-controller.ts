@@ -1,7 +1,6 @@
 import type { MotionValue } from 'motion/react';
 
-const interactiveSelector = 'a, button, article, figure, [data-cursor-focus]';
-const pointerCardSelector = '[data-pointer-card]';
+const interactiveSelector = 'a, button, [data-cursor-focus]';
 const revealSelector = '[data-motion-reveal]';
 const motionReadyAttribute = 'data-motion-ready';
 const motionStateAttribute = 'data-motion-state';
@@ -94,7 +93,6 @@ export class AnimationController {
   private handlePointerMove = (event: PointerEvent) => {
     this.x.set(event.clientX - 160);
     this.y.set(event.clientY - 160);
-    this.applyPointerPosition(event);
     this.setCursorState({
       isFocused: this.hasInteractiveTarget(event.target),
       isVisible: true,
@@ -104,24 +102,6 @@ export class AnimationController {
   private handlePointerLeave = () => {
     this.setCursorState({ isFocused: false, isVisible: false });
   };
-
-  private applyPointerPosition(event: PointerEvent) {
-    const target = event.target;
-
-    if (!(target instanceof Element)) {
-      return;
-    }
-
-    const card = target.closest(pointerCardSelector);
-
-    if (!(card instanceof HTMLElement)) {
-      return;
-    }
-
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--pointer-x', `${event.clientX - rect.left}px`);
-    card.style.setProperty('--pointer-y', `${event.clientY - rect.top}px`);
-  }
 
   private hasInteractiveTarget(target: EventTarget | null) {
     return target instanceof Element && target.closest(interactiveSelector) !== null;

@@ -172,28 +172,6 @@ img {
     transform var(--motion-medium) var(--motion-ease-out);
 }
 
-[data-pointer-card]::after {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    280px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
-    rgba(232, 80, 2, 0.2),
-    rgba(255, 205, 143, 0.12) 36%,
-    transparent 68%
-  );
-  content: '';
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--motion-medium) var(--motion-ease-out);
-}
-
-[data-pointer-card] > * {
-  position: relative;
-  z-index: 1;
-}
-
 @media (hover: hover) and (pointer: fine) {
   a:hover,
   button:hover {
@@ -203,10 +181,6 @@ img {
   [data-pointer-card]:hover {
     box-shadow: 0 24px 70px rgba(34, 34, 34, 0.12);
     transform: translateY(-6px);
-  }
-
-  [data-pointer-card]:hover::after {
-    opacity: 1;
   }
 }
 

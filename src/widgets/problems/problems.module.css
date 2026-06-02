@@ -44,16 +44,22 @@
 }
 
 .row {
+  position: relative;
   display: grid;
   grid-template-columns: 40px 1fr;
   gap: 26px;
   padding: 32px 0 52px 0;
-  transition:
-    border-color var(--motion-medium) var(--motion-ease-out),
-    padding-inline var(--motion-medium) var(--motion-ease-out);
+  transition: padding-inline var(--motion-medium) var(--motion-ease-out);
 
-  &:not(:nth-child(1)) {
-    border-top: 1px solid var(--c-line);
+  &:not(:nth-child(1))::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--c-line);
+    content: '';
+    transition: background-color var(--motion-medium) var(--motion-ease-out);
   }
 }
 
@@ -86,8 +92,16 @@
 
 @media (hover: hover) and (pointer: fine) {
   .row:hover {
-    border-top-color: var(--c-orange);
     padding-inline: 18px;
+  }
+
+  .row:hover::before {
+    background-color: var(--c-orange);
+  }
+
+  .row[data-pointer-card]:hover {
+    box-shadow: none;
+    transform: none;
   }
 
   .row:hover .number {

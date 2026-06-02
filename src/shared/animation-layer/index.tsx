@@ -44,7 +44,7 @@ export function AnimationLayer() {
       aria-hidden="true"
       className={styles.cursorGlow}
       style={{
-        opacity: cursorState.isVisible ? 1 : 0,
+        opacity: cursorState.isFocused ? 1 : 0,
         scale: cursorState.isFocused ? 1.25 : 0.82,
         x: smoothX,
         y: smoothY,
