@@ -11,40 +11,19 @@
   border-radius: 25px;
   margin: 22px auto 0;
   padding: 78px 18px 52px;
-  background:
-    radial-gradient(ellipse 760px 420px at 12% 34%, rgba(255, 219, 132, 0.9), transparent 62%),
-    radial-gradient(ellipse 920px 440px at 62% 4%, rgba(255, 30, 0, 0.82), transparent 70%),
-    linear-gradient(112deg, #ffd178 0%, #ff7a22 31%, #ff210f 61%, #f0172c 77%, #ffbd98 100%);
+  background-image: url('/images/hero-gradient.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--c-white);
   text-align: center;
   animation: softPulse 9s ease-in-out infinite;
 }
 
-.hero::before,
-.hero::after {
-  position: absolute;
-  inset: 0;
-  content: '';
-}
-
-.hero::before {
-  background-image: var(--honeycomb-figma-hero);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: var(--honeycomb-hero-size);
-  filter: brightness(1.6) contrast(1.06);
-  mix-blend-mode: screen;
-  opacity: 0.24;
-  animation:
-    honeycombDrift 42s linear infinite,
-    honeycombGlow 7s ease-in-out infinite;
-}
-
-.hero::after {
-  inset: auto 0 0;
-  height: 46%;
-  background: linear-gradient(180deg, transparent 0%, rgba(255, 184, 148, 0.82) 100%);
-  mask-image: none;
+@media (hover: hover) and (pointer: fine) {
+  .hero[data-pointer-card]:hover {
+    box-shadow: none;
+  }
 }
 
 .header,

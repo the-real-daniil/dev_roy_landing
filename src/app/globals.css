@@ -24,9 +24,7 @@
   --card-padding-inline: 22px;
   --list-row-padding: 22px 0;
   --honeycomb-union-size: max(1920px, 100vw) auto;
-  --honeycomb-hero-size: auto max(100%, 436px);
   --honeycomb-figma-union: url('/patterns/figma-honeycomb-union.svg');
-  --honeycomb-figma-hero: url('/patterns/figma-honeycomb-hero.svg');
   --motion-fast: 180ms;
   --motion-medium: 420ms;
   --motion-slow: 780ms;
@@ -62,7 +60,6 @@
 @media (min-width: 1280px) {
   :root {
     --page-padding: 52px;
-    --honeycomb-hero-size: 100% auto;
   }
 }
 
@@ -206,19 +203,6 @@ img {
 
   100% {
     transform: translate3d(calc(-50% + 22px), -72px, 0);
-  }
-}
-
-@keyframes honeycombGlow {
-  0%,
-  100% {
-    opacity: 0.18;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 0.32;
-    transform: scale(1.035);
   }
 }
 
