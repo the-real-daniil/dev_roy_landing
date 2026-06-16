@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { siteConfig } from '@/shared/config/site';
 import '@/app/globals.css';
@@ -8,6 +8,13 @@ const openGraphImage = {
   width: 591,
   height: 716,
   alt: 'Даниил Лаптев выступает на мероприятии',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export const metadata: Metadata = {

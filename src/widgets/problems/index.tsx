@@ -17,7 +17,7 @@ export function Problems() {
       </div>
       <div className={styles.content}>
         <h2 className={styles.heading} data-motion-reveal="up">
-          Пора сменить карьерную стратегию, если:
+          Пора что-то менять, если:
         </h2>
         <div className={styles.list}>
           {problems.map((problem, index) => (

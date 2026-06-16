@@ -9,3 +9,5 @@ coverage
 *.log
 tsconfig.tsbuildinfo
 .playwright-mcp
+.screenshots
+.DS_Store

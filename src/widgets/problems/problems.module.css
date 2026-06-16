@@ -49,7 +49,6 @@
   grid-template-columns: 40px 1fr;
   gap: 26px;
   padding: 32px 0 52px 0;
-  transition: padding-inline var(--motion-medium) var(--motion-ease-out);
 
   &:not(:nth-child(1))::before {
     position: absolute;
@@ -91,10 +90,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .row:hover {
-    padding-inline: 18px;
-  }
-
   .row:hover::before {
     background-color: var(--c-orange);
   }

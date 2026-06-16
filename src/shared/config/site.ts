@@ -2,13 +2,17 @@ import { anchors } from '@/shared/lib/anchor';
 
 const email = 'iwant@therealdaniil.ru';
 const telegramUrl = 'https://t.me/the_real_daniil';
-const youtubeUrl = 'https://youtube.com';
+const youtubeUrl = 'https://www.youtube.com/@the.real.daniil.23';
+const youtubeInterviewsUrl =
+  'https://youtube.com/playlist?list=PLfwvG6fycyyNhTB7h-O6Nj1rJBYfvvbzo&si=vSCcs6bdYfIZzDKk';
+const reviewsUrl = 'https://t.me/the_real_daniil_feedback';
+const offerUrl = 'https://disk.yandex.ru/i/L8Cm9uYTlL23pA';
+const privacyPolicyUrl = 'https://disk.yandex.ru/i/1h1KkzWkpSNKAg';
 
 export const siteConfig = {
   name: 'ДЕВ РОЙ',
-  title: 'ДЕВ РОЙ - школа карьерного роста',
-  description:
-    'Обучение с сеньор-разработчиком для роста фронтенд-разработчиков и выхода на новую зарплату.',
+  title: 'ДЕВ РОЙ — школа карьерного роста для фронтед-разработчиков',
+  description: 'Обучение для роста фронтенд-разработчиков и выхода на новую зарплату.',
   keywords: [
     'ДЕВ РОЙ',
     'карьерный рост фронтенд разработчика',
@@ -30,10 +34,14 @@ export const siteConfig = {
     email: `mailto:${email}`,
     telegram: telegramUrl,
     youtube: youtubeUrl,
+    youtubeInterviews: youtubeInterviewsUrl,
+    reviews: reviewsUrl,
+    offer: offerUrl,
+    privacyPolicy: privacyPolicyUrl,
   },
   assets: {
     icon: '/icon.svg',
-    logo: '/images/devroy-logo.png',
+    logo: '/icons/devroy-logo.svg',
     openGraphImage: '/images/daniil-stage.png',
     appleIcon: '/icon.svg',
   },
@@ -45,7 +53,7 @@ export const footerLinks = {
     telegram: { label: 'Telegram', href: siteConfig.links.telegram },
   },
   legal: [
-    { label: 'Политика конфиденциальности', href: siteConfig.links.contact },
-    { label: 'Публичная оферта', href: siteConfig.links.contact },
+    { label: 'Политика конфиденциальности', href: siteConfig.links.privacyPolicy },
+    { label: 'Публичная оферта', href: siteConfig.links.offer },
   ],
 };

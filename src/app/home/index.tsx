@@ -5,10 +5,10 @@ import { Header } from '@/widgets/header';
 import { Hero } from '@/widgets/hero';
 import { Pricing } from '@/widgets/pricing';
 import { Problems } from '@/widgets/problems';
+import { Product } from '@/widgets/product';
 import { Program } from '@/widgets/program';
 import { Results } from '@/widgets/results';
 import { Trust } from '@/widgets/trust';
-import { Values } from '@/widgets/values';
 import { AnimationLayer } from '@/shared/animation-layer';
 
 import styles from './home.module.css';
@@ -22,10 +22,11 @@ export function HomePage() {
         <Hero />
         <div className={styles.lightHoneycomb}>
           <About />
-          <Values />
+          {/* <Values /> */}
           <Problems />
         </div>
         <Program />
+        <Product />
         <Trust />
         <Pricing />
         <Results />

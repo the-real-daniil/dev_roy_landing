@@ -19,7 +19,9 @@ export function Faq() {
         <Button
           className={styles.sideButton}
           data-motion-reveal="up"
-          href={siteConfig.links.contact}
+          href={siteConfig.links.telegram}
+          target="_blank"
+          rel="noopener noreferrer"
           variant="ghost"
         >
           Обсудить обучение
@@ -36,30 +38,36 @@ export function Faq() {
               data-motion-delay={item.id}
               data-motion-reveal="up"
               data-open={isOpen}
-              data-pointer-card="true"
               key={item.id}
             >
-              <div className={styles.question}>
-                <span>{item.id}</span>
-                <h3>{item.question}</h3>
+              <h3 className={styles.question}>
                 <button
                   aria-controls={answerId}
                   aria-expanded={isOpen}
                   aria-label={isOpen ? 'Свернуть ответ' : 'Открыть ответ'}
+                  className={styles.trigger}
                   onClick={() => setOpenId(isOpen ? null : item.id)}
                   type="button"
-                  className={styles.answerButton}
                 >
-                  {isOpen ? <Minus size={22} /> : <Plus size={22} />}
+                  <span className={styles.index}>{item.id}</span>
+                  <span className={styles.text}>
+                    <span>{item.question}</span>
+                    <span aria-hidden="true" className={styles.textGhost}>
+                      {item.question}
+                    </span>
+                  </span>
+                  <span aria-hidden="true" className={styles.answerButton}>
+                    {isOpen ? <Minus size={22} /> : <Plus size={22} />}
+                  </span>
                 </button>
-              </div>
+              </h3>
               <AnimatePresence initial={false}>
                 {isOpen ? (
                   <motion.p
-                    animate={{ height: 'auto', opacity: 1, y: 0 }}
-                    exit={{ height: 0, opacity: 0, y: -8 }}
+                    animate={{ height: 'auto', marginTop: 20, opacity: 1 }}
+                    exit={{ height: 0, marginTop: 0, opacity: 0 }}
                     id={answerId}
-                    initial={{ height: 0, opacity: 0, y: -8 }}
+                    initial={{ height: 0, marginTop: 0, opacity: 0 }}
                     transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
                   >
                     {item.answer}

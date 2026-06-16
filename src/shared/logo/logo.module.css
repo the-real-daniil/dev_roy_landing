@@ -2,13 +2,13 @@
   display: inline-flex;
   align-items: center;
   color: #111111;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 0.9;
   letter-spacing: 0;
 }
 
-.inverted {
-  color: var(--c-white);
+.logo:hover {
+  transform: none;
 }
 
 .footerText {

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { ArrowRight, Dot } from 'lucide-react';
 import { siteConfig } from '@/shared/config/site';
-import { anchors } from '@/shared/lib/anchor';
 import { Button } from '@/shared/button';
 import { SectionLabel } from '@/shared/section-label';
 import styles from './trust.module.css';
@@ -53,7 +52,7 @@ export function Trust() {
               data-motion-reveal="zoom"
               data-pointer-card="true"
             >
-              <strong>20+</strong>
+              <strong>30+</strong>
               <span>трудоустроенных учеников</span>
             </div>
             <div
@@ -74,7 +73,11 @@ export function Trust() {
               </li>
             ))}
             <div className={styles.links} data-motion-reveal="up">
-              <a href={`#${anchors.results}`}>
+              <a
+                href={siteConfig.links.youtubeInterviews}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Смотри записи моих собесов
                 <div className={styles.arrow}>
                   <Dot />
@@ -85,6 +88,8 @@ export function Trust() {
               <Button
                 className={styles.contactButton}
                 href={siteConfig.links.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="solid"
               >
                 Телеграм-канал
@@ -92,6 +97,8 @@ export function Trust() {
               <Button
                 className={styles.contactButton}
                 href={siteConfig.links.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="solid"
               >
                 YouTube-канал

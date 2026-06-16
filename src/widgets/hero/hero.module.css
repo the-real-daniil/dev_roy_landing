@@ -11,13 +11,40 @@
   border-radius: 25px;
   margin: 22px auto 0;
   padding: 78px 18px 52px;
-  background-image: url('/images/hero-gradient.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image:
+    linear-gradient(180deg, rgba(252, 177, 118, 0) 50%, rgba(252, 177, 118, 0.8) 86%, #fbb07e 100%),
+    radial-gradient(120% 88% at 58% -8%, rgba(247, 12, 2, 0.6) 0%, rgba(247, 16, 3, 0) 60%),
+    linear-gradient(
+      94deg,
+      #fece8e 0%,
+      #fec382 4%,
+      #fd9a2f 12%,
+      #fc6205 25%,
+      #f94d03 40%,
+      #f84202 50%,
+      #f73703 60%,
+      #f7410e 72%,
+      #f65a13 85%,
+      #f59363 97%,
+      #f59a6a 100%
+    );
   color: var(--c-white);
   text-align: center;
   animation: softPulse 9s ease-in-out infinite;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  background-image: url('/patterns/figma-honeycomb-hero.svg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  filter: brightness(1.6) contrast(1.06);
+  mix-blend-mode: screen;
+  opacity: 0.18;
+  content: '';
+  pointer-events: none;
 }
 
 @media (hover: hover) and (pointer: fine) {

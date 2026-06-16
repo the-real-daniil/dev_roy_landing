@@ -14,7 +14,7 @@ export function About() {
           data-motion-delay="1"
           data-motion-reveal="left"
           data-pointer-card="true"
-          src="/images/daniil-portrait.png"
+          src="/images/daniil-portrait.webp"
           alt="Даниил Лаптев"
           width={285}
           height={327}

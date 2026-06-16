@@ -1,5 +1,5 @@
 import { navItems } from '@/shared/config/landing';
-import { anchors } from '@/shared/lib/anchor';
+import { siteConfig } from '@/shared/config/site';
 import { Button } from '@/shared/button';
 import { Logo } from '@/shared/logo';
 import styles from './header.module.css';
@@ -21,7 +21,12 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <Button className={styles.cta} href={`#${anchors.pricing}`}>
+        <Button
+          className={styles.cta}
+          href={siteConfig.links.telegram}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Обсудить обучение
         </Button>
       </div>

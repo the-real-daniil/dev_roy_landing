@@ -1,11 +1,18 @@
 import Image from 'next/image';
-import { anchors } from '@/shared/lib/anchor';
+import { siteConfig } from '@/shared/config/site';
 import { Button } from '@/shared/button';
 import { HexIcon } from '@/shared/hex-icon';
 import { SectionLabel } from '@/shared/section-label';
 import styles from './values.module.css';
 
 const items = [
+  {
+    iconSrc: '/icons/value-diagnostics.svg',
+    iconWidth: 42,
+    iconHeight: 42,
+    title: 'Диагностика',
+    text: 'текущего уровня, сильных и слабых сторон',
+  },
   {
     iconSrc: '/icons/value-preparation.svg',
     iconWidth: 41,
@@ -19,13 +26,6 @@ const items = [
     iconHeight: 42,
     title: 'Результат',
     text: 'это ваша карьера и высокая зарплата',
-  },
-  {
-    iconSrc: '/icons/value-diagnostics.svg',
-    iconWidth: 42,
-    iconHeight: 42,
-    title: 'Диагностика',
-    text: 'текущего уровня, сильных и слабых сторон',
   },
 ];
 
@@ -64,7 +64,9 @@ export function Values() {
           <Button
             className={styles.bigButton}
             data-motion-reveal="up"
-            href={`#${anchors.pricing}`}
+            href={siteConfig.links.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
             data-motion-delay="4"
             data-pointer-card="true"
           >

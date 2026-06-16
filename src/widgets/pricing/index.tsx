@@ -10,7 +10,6 @@ export function Pricing() {
     <section className={styles.section} id={anchors.pricing}>
       <div className={styles.heading} data-motion-reveal="up">
         <h2>Как попасть на обучение</h2>
-        <p>Карьера в IT - это система, а не удача. Начинайте сейчас.</p>
       </div>
       <div className={styles.grid}>
         {tariffs.map((tariff, index) => (
@@ -44,7 +43,9 @@ export function Pricing() {
                 <Button
                   endAdornment={null}
                   className={styles.tariffButton}
-                  href={siteConfig.links.contact}
+                  href={siteConfig.links.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   variant={tariff.buttonVariant}
                 >
                   Начать
@@ -57,7 +58,7 @@ export function Pricing() {
       </div>
       <div className={styles.note} data-motion-reveal="right">
         <Info aria-hidden="true" size={18} />
-        <span>Выплату % от зарплаты можно разбить на 3 месяца</span>
+        <span>Оплату можно разбить на части, обсуждается индивидуально</span>
       </div>
     </section>
   );

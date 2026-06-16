@@ -15,9 +15,8 @@
   background-repeat: repeat-y;
   background-size: var(--honeycomb-union-size);
   content: '';
-  opacity: 0.13;
+  opacity: 0.04;
   pointer-events: none;
-  mix-blend-mode: color-burn;
   transform: translateX(-50%);
   animation:
     honeycombFloat 34s ease-in-out infinite alternate,
