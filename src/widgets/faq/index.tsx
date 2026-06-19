@@ -10,22 +10,12 @@ import { Button } from '@/shared/button';
 import styles from './faq.module.css';
 
 export function Faq() {
-  const [openId, setOpenId] = useState<string | null>('03');
+  const [openId, setOpenId] = useState<string | null>('01');
 
   return (
     <section className={styles.section} id={anchors.faq}>
       <div className={styles.side} data-motion-reveal="left">
         <h2>Ответы на ключевые вопросы</h2>
-        <Button
-          className={styles.sideButton}
-          data-motion-reveal="up"
-          href={siteConfig.links.telegram}
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="ghost"
-        >
-          Обсудить обучение
-        </Button>
       </div>
       <div className={styles.list}>
         {faqItems.map((item) => {
@@ -77,6 +67,22 @@ export function Faq() {
             </article>
           );
         })}
+      </div>
+      <div className={styles.cta} data-motion-reveal="up">
+        <p className={styles.ctaTitle}>
+          Остались вопросы? Напиши мне, разберем твой кейс и сформируем готовый план достижения
+          цели!
+        </p>
+        <Button
+          className={styles.ctaButton}
+          data-motion-reveal="up"
+          href={siteConfig.links.telegram}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="solid"
+        >
+          Обсудить обучение
+        </Button>
       </div>
     </section>
   );

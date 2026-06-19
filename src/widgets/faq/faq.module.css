@@ -130,6 +130,33 @@
   overflow: hidden;
 }
 
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-top: var(--section-row-gap);
+  padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 56px);
+  border: 1px solid var(--c-orange);
+  border-radius: 28px;
+  background: rgba(239, 75, 0, 0.06);
+  text-align: center;
+}
+
+.ctaTitle {
+  max-width: 880px;
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.ctaButton {
+  width: auto;
+  min-width: 280px;
+  font-size: 18px;
+}
+
 @media (min-width: 1024px) {
   .section {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -149,5 +176,9 @@
 
   .sideButton {
     max-width: 288px;
+  }
+
+  .cta {
+    grid-column: 1 / -1;
   }
 }

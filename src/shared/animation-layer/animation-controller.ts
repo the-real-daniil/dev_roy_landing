@@ -80,7 +80,7 @@ export class AnimationController {
         }
       },
       {
-        rootMargin: '0px 0px -12% 0px',
+        rootMargin: '0px 0px 5% 0px',
         threshold: 0.16,
       },
     );

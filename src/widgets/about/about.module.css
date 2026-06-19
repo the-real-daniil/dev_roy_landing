@@ -17,7 +17,7 @@
   width: 100%;
   min-width: 0;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: stretch;
   justify-items: center;
   gap: var(--section-row-gap);
   margin-inline: auto;
@@ -40,6 +40,9 @@
   max-width: 520px;
   min-width: 0;
   gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--c-orange);
+  border-radius: var(--br-xl);
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
@@ -50,6 +53,14 @@
   min-width: 0;
   margin: 0;
   overflow-wrap: anywhere;
+}
+
+.highlight {
+  padding: 2px 6px;
+  background: var(--c-orange);
+  color: #fff;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -70,6 +81,10 @@
     grid-template-columns: 285px minmax(0, 1fr);
     justify-items: stretch;
     gap: var(--section-column-gap);
+  }
+
+  .photo {
+    height: 100%;
   }
 
   .text {
